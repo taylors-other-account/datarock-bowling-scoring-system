@@ -32,4 +32,12 @@ export class FrameManager {
   getAllRolls(): number[] {
     return this.frames.flatMap(frame => frame.getRolls());
   }
+  
+  /**
+   * Gets the current frame number (1-based).
+   * @returns The current frame number.
+   */
+  getCurrentFrameNumber(): number {
+    return this.currentFrameIndex + 1;
+  }
 } 

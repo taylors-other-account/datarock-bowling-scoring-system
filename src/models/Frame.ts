@@ -41,9 +41,9 @@ export class Frame {
     
     // If it's the 10th frame with a strike or spare, we need all rolls
     if (this.frameNumber === 10) {
-      // If there are no strikes or we have 2 rolls and it's not a spare
-      if ((this.rolls[0] !== Frame.PINS_PER_FRAME || this.rolls[1] !== Frame.PINS_PER_FRAME) && 
-          this.rolls.length === 2 && 
+      // If we have 2 rolls and neither is a strike or spare
+      if (this.rolls.length === 2 && 
+          this.rolls[0] !== Frame.PINS_PER_FRAME && 
           this.rolls[0] + this.rolls[1] !== Frame.PINS_PER_FRAME) {
         return true;
       }
